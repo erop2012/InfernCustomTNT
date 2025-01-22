@@ -1,0 +1,6 @@
+name: InfernCustomTNT
+version: '${project.version}'
+main: org.infernworld.inferncustomtnt.InfernCustomTNT
+api-version: '1.16'
+commands:
+  inferncustomtnt: {}

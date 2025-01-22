@@ -1,0 +1,24 @@
+# Плагин "InfernCustomTNT" с HolyWorldLite : Версия плагина: 1.0v
+# Разработчик (По всем вопросам) -> Егор Татаркин (Ник в майне: EG_SH_NOT) vk.com/egortatarkin : @theegorhick (Telegram)
+#
+# Канал Великого Егшота -> t.me/egashotina
+
+Item: # Настройка ТНТ
+  material: TNT # Материал
+  name: "&#FB08E1&lСтиллер" # Название
+  lore: # Описание
+    - " "
+    - " &7Особенности:"
+    - " &7▫ &fпосле взрыва выпадает "
+    - "   &fспавнер с мобом &#08DDFBшансом в 50%&f."
+    - " "
+  ench: true # Включить зачарование предмета?
+
+settings: # Настройка плагина
+  soundBreack: ENTITY_WITHER_BREAK_BLOCK # Звук при взрыве
+  spawner-drop-chance: 50 # Шанс выпадение спавнера
+  spawner-name: "&dСпавнер %entity" # Название выпавшего спавнера
+
+message: # Сообщение
+  no-perms: "&#FD0000▶&f Нет прав!"
+  player-no-found: "&#FD0000▶&f Игрок не найден!"
