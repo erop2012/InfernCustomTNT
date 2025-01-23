@@ -1,5 +1,6 @@
 package org.infernworld.inferncustomtnt.listener;
 
+import com.destroystokyo.paper.event.block.TNTPrimeEvent;
 import lombok.val;
 import org.bukkit.*;
 import org.bukkit.block.Block;
@@ -13,6 +14,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockIgniteEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -47,25 +49,15 @@ public class Events implements Listener {
             placedBlock.setMetadata("InfernCustomTNT", new FixedMetadataValue(plugin, true));
         }
     }
-
-    @EventHandler(ignoreCancelled = true)
-    public void onPlayerInteract(PlayerInteractEvent e) {
-        Block block = e.getClickedBlock();
-        Player player = e.getPlayer();
-        if (block != null && e.getAction() == Action.RIGHT_CLICK_BLOCK && player.getInventory().getItemInHand() != null) {
-            ItemStack itemInHand = player.getInventory().getItemInHand();
-
-            if (itemInHand.getType() == Material.FLINT_AND_STEEL) {
-                if (block != null && block.getType() == Material.TNT) {
-                    if (block.hasMetadata("InfernCustomTNT")) {
-                        e.setCancelled(true);
-                        TNTPrimed tntPrimed = block.getWorld().spawn(block.getLocation().add(0.5, 0.5, 0.5), TNTPrimed.class);
-                        tntPrimed.setMetadata("InfernCustomTNT", new FixedMetadataValue(plugin, true));
-                        block.setType(Material.AIR);
-                        tntPrimed.setFuseTicks(80);
-                    }
-                }
-            }
+    @EventHandler
+    public void onTntPrime(TNTPrimeEvent e) {
+        Block block = e.getBlock();
+        if (block.getType() == Material.TNT && block.hasMetadata("InfernCustomTNT")) {
+            e.setCancelled(true);
+            TNTPrimed tntPrimed = block.getWorld().spawn(block.getLocation().add(0.5, 0.5, 0.5), TNTPrimed.class);
+            tntPrimed.setMetadata("InfernCustomTNT", new FixedMetadataValue(plugin, true));
+            block.setType(Material.AIR);
+            tntPrimed.setFuseTicks(80);
         }
     }
 
