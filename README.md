@@ -7,7 +7,7 @@
 - Поддержка HEX цветов!
 - Исходный код!
 
-Для связи (Telegram): t.me/theegorchik
+Для связи (Telegram): [@theegorchik](https://t.me/theegorchik)
 
 ------
 
@@ -18,7 +18,7 @@ A plugin for custom dynamite that drops a spawner with a saved mob when it explo
 - Support HEX colors!
 - The source code!
   
-For communication (Telegram): t.me/theegorchik
+For communication (Telegram): [@theegorchik](https://t.me/theegorchik)
 
 ![image](https://github.com/user-attachments/assets/bf4f2603-a722-469d-9201-2bb3a2387ea6)
 
