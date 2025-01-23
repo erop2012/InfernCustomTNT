@@ -79,9 +79,9 @@ public class Events implements Listener {
                 e.setCancelled(true);
                 Location loc = tntPrimed.getLocation();
                 loc.getWorld().createExplosion(loc, 3.0F, false, false);
-                for (int x = -2; x <= 2; x++) {
-                    for (int y = -2; y <= 2; y++) {
-                        for (int z = -2; z <= 2; z++) {
+                for (int x = -1; x <= 1; x++) {
+                    for (int y = -1; y <= 1; y++) {
+                        for (int z = -1; z <= 1; z++) {
                             Block block = loc.clone().add(x, y, z).getBlock();
                             if (block.getType() == Material.SPAWNER) {
                                 CreatureSpawner cs = (CreatureSpawner) block.getState();
