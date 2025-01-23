@@ -19,3 +19,6 @@ A plugin for custom dynamite that drops a spawner with a saved mob when it explo
 - The source code!
   
 For communication (Telegram): t.me/theegorchik
+
+
+![image](https://github.com/user-attachments/assets/b2537212-3f9b-4420-95bd-017c3e17902c)
